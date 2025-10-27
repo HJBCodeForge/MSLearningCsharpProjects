@@ -1,0 +1,15 @@
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\bin\Debug\net9.0\addLogictoApplications.exe
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\bin\Debug\net9.0\addLogictoApplications.deps.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\bin\Debug\net9.0\addLogictoApplications.runtimeconfig.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\bin\Debug\net9.0\addLogictoApplications.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\bin\Debug\net9.0\addLogictoApplications.pdb
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.AssemblyInfoInputs.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.AssemblyInfo.cs
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.csproj.CoreCompileInputs.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.sourcelink.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\refint\addLogictoApplications.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.pdb
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\addLogictoApplications.genruntimeconfig.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\addLogictoApplications\obj\Debug\net9.0\ref\addLogictoApplications.dll
