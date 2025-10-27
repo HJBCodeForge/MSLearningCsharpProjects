@@ -56,6 +56,16 @@ string adminAccess;
 // If the user is an Admin with a level less than or equal to 55, output the message:
 // Output:
 // Welcome, Admin user.
+    // If the user is a Manager with a level 20 or greater, output the message:
+        // Output:
+        // Contact an Admin for access.
+    // If the user is a Manager with a level less than 20, output the message:
+        // Output:
+        // You do not have sufficient privileges.
+    // If the user isn't an Admin or a Manager, output the message:
+        // Output:
+        // You do not have sufficient privileges.
+
 if (permission.Contains("Admin"))
 {
     Console.WriteLine(adminAccess = (level > 55) ? "Welcome, Super Admin user." : "Welcome, Admin user.");
@@ -68,14 +78,3 @@ else
 {
     Console.WriteLine(adminAccess = "You do not have sufficient privileges.");
 }
-
-
-    // If the user is a Manager with a level 20 or greater, output the message:
-        // Output:
-        // Contact an Admin for access.
-    // If the user is a Manager with a level less than 20, output the message:
-        // Output:
-        // You do not have sufficient privileges.
-    // If the user isn't an Admin or a Manager, output the message:
-        // Output:
-        // You do not have sufficient privileges.
