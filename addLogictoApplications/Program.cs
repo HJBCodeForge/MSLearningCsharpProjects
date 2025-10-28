@@ -122,18 +122,45 @@
 //     Console.WriteLine("Found Chuck");
 
 //<--- Exercise - Complete a challenge activity using variable scope --->
-int[] numbers = { 4, 8, 15, 16, 23, 42 };
-int total = 0;
-bool found = false;
+// int[] numbers = { 4, 8, 15, 16, 23, 42 };
+// int total = 0;
+// bool found = false;
 
-foreach (int number in numbers)
+// foreach (int number in numbers)
+// {
+//     total += number;
+//     if (number == 42)
+//         found = true;
+// }
+
+// if (found) 
+//     Console.WriteLine("Set contains 42");
+
+// Console.WriteLine($"Total: {total}");
+
+//<--- Branch the flow of code using the switch-case construct in C# --->
+//<--- Exercise - Implement a switch statement --->
+int employeeLevel = 201;
+string employeeName = "John Smith";
+
+string title = "";
+
+switch (employeeLevel)
 {
-    total += number;
-    if (number == 42)
-        found = true;
+    case 100:
+        title = "Junior Associate";
+        break;
+    case 200:
+        title = "Senior Associate";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
 }
-
-if (found) 
-    Console.WriteLine("Set contains 42");
-
-Console.WriteLine($"Total: {total}");
+Console.WriteLine($"{employeeName}, {title}");
