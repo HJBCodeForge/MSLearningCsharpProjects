@@ -45,9 +45,9 @@
 // Console.WriteLine((flip == 0) ? "Heads" : "Tails");
 
 //<--- Exercise --->
-string permission = "Admin|Manager";
-int level = 55;
-string adminAccess;
+// string permission = "Admin|Manager";
+// int level = 55;
+// string adminAccess;
 
 //Implement business rules
 // If the user is an Admin with a level greater than 55, output the message:
@@ -56,25 +56,84 @@ string adminAccess;
 // If the user is an Admin with a level less than or equal to 55, output the message:
 // Output:
 // Welcome, Admin user.
-    // If the user is a Manager with a level 20 or greater, output the message:
-        // Output:
-        // Contact an Admin for access.
-    // If the user is a Manager with a level less than 20, output the message:
-        // Output:
-        // You do not have sufficient privileges.
-    // If the user isn't an Admin or a Manager, output the message:
-        // Output:
-        // You do not have sufficient privileges.
+// If the user is a Manager with a level 20 or greater, output the message:
+// Output:
+// Contact an Admin for access.
+// If the user is a Manager with a level less than 20, output the message:
+// Output:
+// You do not have sufficient privileges.
+// If the user isn't an Admin or a Manager, output the message:
+// Output:
+// You do not have sufficient privileges.
 
-if (permission.Contains("Admin"))
+// if (permission.Contains("Admin"))
+// {
+//     Console.WriteLine(adminAccess = (level > 55) ? "Welcome, Super Admin user." : "Welcome, Admin user.");
+// }
+// else if (permission.Contains("Manager"))
+// {
+//     Console.WriteLine(adminAccess = (level >= 20) ? "Contact an Admin for access." : "You do not have sufficient privileges.");
+// }
+// else
+// {
+//     Console.WriteLine(adminAccess = "You do not have sufficient privileges.");
+// }
+
+//<--- Exercise - Code blocks and variable scope --->
+
+// Code sample 1
+// bool flag = true;
+// int value;
+
+// if (flag)
+// {
+//     value = 10;
+//     Console.WriteLine($"Inside the code block: {value}");
+// }
+
+// Console.WriteLine($"Outside the code block: {value}");
+
+// Code sample 2
+// int value;
+
+// if (true)
+// {
+//     value = 10;
+//     Console.WriteLine($"Inside the code block: {value}");
+// }
+
+// Console.WriteLine($"Outside the code block: {value}");
+
+// <--- Create an example of an if statement that uses a code block --->
+//Bad convention and hard to read
+// string name = "steve";
+// if (name == "bob") Console.WriteLine("Found Bob");
+// else if (name == "steve") Console.WriteLine("Found Steve");
+// else Console.WriteLine("Found Chuck");
+
+//Good convention - easier to read
+// string name = "steve";
+
+// if (name == "bob")
+//     Console.WriteLine("Found Bob");
+// else if (name == "steve") 
+//     Console.WriteLine("Found Steve");
+// else
+//     Console.WriteLine("Found Chuck");
+
+//<--- Exercise - Complete a challenge activity using variable scope --->
+int[] numbers = { 4, 8, 15, 16, 23, 42 };
+int total = 0;
+bool found = false;
+
+foreach (int number in numbers)
 {
-    Console.WriteLine(adminAccess = (level > 55) ? "Welcome, Super Admin user." : "Welcome, Admin user.");
+    total += number;
+    if (number == 42)
+        found = true;
 }
-else if (permission.Contains("Manager"))
-{
-    Console.WriteLine(adminAccess = (level >= 20) ? "Contact an Admin for access." : "You do not have sufficient privileges.");
-} 
-else
-{
-    Console.WriteLine(adminAccess = "You do not have sufficient privileges.");
-}
+
+if (found) 
+    Console.WriteLine("Set contains 42");
+
+Console.WriteLine($"Total: {total}");
