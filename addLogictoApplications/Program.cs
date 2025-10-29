@@ -313,14 +313,48 @@
 // Console.WriteLine($"Last number: {current}");
 
 //<-- Use the continue statement to step directly to the Boolean expression -->
+// Random random = new Random();
+// int current = random.Next(1, 11);
+
+// do
+// {
+//     current = random.Next(1, 11);
+
+//     if (current >= 8) continue;
+
+//     Console.WriteLine(current);
+// } while (current != 7);
+
+// <-- Exercise - Complete a challenge activity using do and while iteration statements -->
+//<-- Role playing game battle challenge -->
 Random random = new Random();
-int current = random.Next(1, 11);
+int heroHealth = 10;
+int monsterHealth = 10;
+int diceRoll = 0;
+string winner = "";
 
 do
 {
-    current = random.Next(1, 11);
-    
-    if (current >= 8) continue;
+    diceRoll = random.Next(1, 11);
+    monsterHealth -= diceRoll;
+    Console.WriteLine($"Monster was damaged and lost {diceRoll} health and now has {monsterHealth} health.");
 
-    Console.WriteLine(current);
-} while (current != 7);
+    if (monsterHealth <= 0) continue;
+
+    diceRoll = random.Next(1, 11);
+    heroHealth -= diceRoll;
+    Console.WriteLine($"Hero was damaged and lost {diceRoll} health and now has {heroHealth} health.");
+
+    if (heroHealth <= 0) continue;
+
+} while (monsterHealth > 0 && heroHealth > 0);
+
+if (monsterHealth <= 0)
+{
+    winner = "Hero";
+} else if (heroHealth <= 0)
+{
+    winner = "Monster";
+}
+Console.WriteLine($"{winner} wins!");
+
