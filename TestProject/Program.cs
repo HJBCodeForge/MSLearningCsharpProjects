@@ -465,13 +465,160 @@ I then writes the reversed sentance and the o count to the terminal*/
 //When in doubt, stick with the basics
 // For simplicity's sake you should prefer a subset of basic data types, including:
 
-  // int for most whole numbers
-  // decimal for numbers representing money
-  // bool for true or false values
-  // string for alphanumeric value
+// int for most whole numbers
+// decimal for numbers representing money
+// bool for true or false values
+// string for alphanumeric value
 
 //Choose specialty complex types for special situations
 // byte: working with encoded data that comes from other computer systems or using different character sets.
 // double: working with geometric or scientific purposes. double is used frequently when building games involving motion.
 // System.DateTime for a specific date and time value.
 // System.TimeSpan for a span of years / months / days / hours / minutes / seconds / milliseconds.
+
+/* --- Convert Data Types Using Casting and Conversion Techniques in C# --- */
+// --- Exercise - Explore data type casting and conversion ---
+
+//Write code that attempts to add an int and a string and save the result in an int
+//Can not convert string to Int
+// int first = 2;
+// string second = "4";
+// int result = first + second;
+// Console.WriteLine(result);
+
+// int first = 2;
+// string second = "4";
+// string result = first + second;
+// Console.WriteLine(result);
+//Output: 24, it concats string and number. But does not add them.
+
+//Question: Is it possible that attempting to change the value's data type would result in a loss of information?
+//Widening Conversion -  can rely on implicit conversion. The compiler handles implicit conversions.
+// int myInt = 3;
+// Console.WriteLine($"int: {myInt}");
+// decimal myDecimal = myInt;
+// Console.WriteLine($"decimal: {myDecimal}");
+
+//Perform a cast
+// decimal myDecimal = 3.14m;
+// Console.WriteLine($"decimal: {myDecimal}");
+
+// int myInt = (int)myDecimal;
+// Console.WriteLine($"int: {myInt}");
+
+//--- Determine if your conversion is a "widening conversion" or a "narrowing conversion" ---
+//Write small tests to understand the behaviors 
+// decimal myDecimal = 1.23456789m;
+// float myFloat = (float)myDecimal;
+
+// Console.WriteLine($"Decimal: {myDecimal}");
+// Console.WriteLine($"Float  : {myFloat}");
+
+// --- Performing Data Conversions ---
+// - Use a helper method on the variable
+// - Use a helper method on the data type
+// - Use the Convert class' methods
+
+//ToString() to convert a number to a string
+// int first = 5;
+// int second = 7;
+// string message = first.ToString() + second.ToString();
+// Console.WriteLine(message);
+
+//Convert a string to an int using the Parse() helper method
+// string first = "5";
+// string second = "7";
+// int sum = int.Parse(first) + int.Parse(second);
+// Console.WriteLine(sum);
+//TryParse() - avoid exceptions when string can not be converted.
+
+//Convert a string to a int using the Convert class
+// string value1 = "5";
+// string value2 = "7";
+// int result = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+// Console.WriteLine(result); //Convert class is best for converting fractional numbers into whole numbers (int) because it rounds up.
+//rather use TryParse()
+
+//Compare casting and converting a decimal into an int
+// int value = (int)1.5m; // casting truncates
+// Console.WriteLine(value);
+
+// int value2 = Convert.ToInt32(1.5m); // converting rounds up
+// Console.WriteLine(value2);
+
+//--- Exercise - Examine the TryParse() method ---
+// string value = "102";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//   Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//   Console.WriteLine("Unable to report the measurement.");
+// }
+
+//Use the parsed int later in code
+// string value = "102";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//    Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//    Console.WriteLine("Unable to report the measurement.");
+// }
+// Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+//String variable to a value that can't be parsed
+// string value = "bad";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//    Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//    Console.WriteLine("Unable to report the measurement.");
+// }
+// if (result > 0)
+//    Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+/* --- Exercise - Complete a challenge to combine string array values as strings and as integers --- */
+// string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+// double total = 0.0;
+// string sentance = "";
+
+// foreach (var item in values)
+// {
+//   double number = 0;
+//   if (double.TryParse(item, out number))
+//   {
+//     total += number;
+//   }
+//   else
+//   {
+//     sentance += item;
+//   }
+// }
+// Console.WriteLine($"Message: {sentance}");
+// Console.WriteLine($"Total: {total}");
+
+//Exercise - Complete a challenge to output math operations as specific number types
+int value1 = 11;
+decimal value2 = 6.2m;
+float value3 = 4.3f;
+
+// Your code here to set result1
+// Hint: You need to round the result to nearest integer (don't just truncate)
+int result1 = Convert.ToInt32(value1 / value2);
+Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+
+// Your code here to set result2
+decimal result2 = value2 / (decimal)value3;
+Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+
+// Your code here to set result3
+float result3 = value3 / value1;
+Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
