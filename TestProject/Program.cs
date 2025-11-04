@@ -452,11 +452,26 @@ I then writes the reversed sentance and the o count to the terminal*/
 // Console.WriteLine($"val_B: {val_B}");
 
 //Reference Type (array): In this example, ref_A and ref_B are array reference types.
-int[] ref_A= new int[1];
-ref_A[0] = 2;
-int[] ref_B = ref_A;
-ref_B[0] = 5;
+// int[] ref_A= new int[1];
+// ref_A[0] = 2;
+// int[] ref_B = ref_A;
+// ref_B[0] = 5;
 
-Console.WriteLine("--Reference Types--");
-Console.WriteLine($"ref_A[0]: {ref_A[0]}");
-Console.WriteLine($"ref_B[0]: {ref_B[0]}");
+// Console.WriteLine("--Reference Types--");
+// Console.WriteLine($"ref_A[0]: {ref_A[0]}");
+// Console.WriteLine($"ref_B[0]: {ref_B[0]}");
+
+//--- Choose the right data type ---
+//When in doubt, stick with the basics
+// For simplicity's sake you should prefer a subset of basic data types, including:
+
+  // int for most whole numbers
+  // decimal for numbers representing money
+  // bool for true or false values
+  // string for alphanumeric value
+
+//Choose specialty complex types for special situations
+// byte: working with encoded data that comes from other computer systems or using different character sets.
+// double: working with geometric or scientific purposes. double is used frequently when building games involving motion.
+// System.DateTime for a specific date and time value.
+// System.TimeSpan for a span of years / months / days / hours / minutes / seconds / milliseconds.
