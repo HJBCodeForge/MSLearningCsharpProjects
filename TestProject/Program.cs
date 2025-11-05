@@ -606,19 +606,125 @@ I then writes the reversed sentance and the o count to the terminal*/
 // Console.WriteLine($"Total: {total}");
 
 //Exercise - Complete a challenge to output math operations as specific number types
-int value1 = 11;
-decimal value2 = 6.2m;
-float value3 = 4.3f;
+// int value1 = 11;
+// decimal value2 = 6.2m;
+// float value3 = 4.3f;
 
-// Your code here to set result1
-// Hint: You need to round the result to nearest integer (don't just truncate)
-int result1 = Convert.ToInt32(value1 / value2);
-Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+// // Your code here to set result1
+// // Hint: You need to round the result to nearest integer (don't just truncate)
+// int result1 = Convert.ToInt32(value1 / value2);
+// Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
 
-// Your code here to set result2
-decimal result2 = value2 / (decimal)value3;
-Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+// // Your code here to set result2
+// decimal result2 = value2 / (decimal)value3;
+// Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
 
-// Your code here to set result3
-float result3 = value3 / value1;
-Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+// // Your code here to set result3
+// float result3 = value3 / value1;
+// Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+
+
+/* --- Perform Operations on Arrays Using Helper Methods in C# --- */
+// Sort and reverse the order of array elements.
+// string[] pallets = ["B14", "A11", "B12", "A13"];
+// Console.WriteLine("Sorted...");
+// Array.Sort(pallets);
+// foreach (var pallet in pallets)
+// {
+//   Console.WriteLine($"-- {pallet}");
+// }
+// Console.WriteLine();
+// Console.WriteLine("Reversed...");
+// Array.Reverse(pallets);
+// foreach (var pallet in pallets)
+// {
+//   Console.WriteLine(pallet);
+// }
+
+// Clear and resize the elements of an array.
+// string[] pallets = ["B14", "A11", "B12", "A13"];
+// Console.WriteLine("");
+
+// //Console.WriteLine($"Before: {pallets[0].ToLower()}");
+// Array.Clear(pallets, 0, 2); //0 (starting index), 2 (amount of elements)
+// //if (pallets[0] != null)  
+// //  Console.WriteLine($"After: {pallets[0].ToLower()}"); // .Clear completly removes the element, null.
+
+// Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+// foreach (var pallet in pallets)
+//   Console.WriteLine($"-- {pallet}");
+
+// Console.WriteLine();
+// Array.Resize(ref pallets, 6); //Resize to add elements
+// Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+
+// pallets[4] = "C01";
+// pallets[5] = "C02";
+
+// foreach (var pallet in pallets)
+//   Console.WriteLine($"-- {pallet}");
+
+// Console.WriteLine();
+// Array.Resize(ref pallets, 3);
+// Console.WriteLine($"Resizing 3 ... count: {pallets.Length}");
+
+// foreach (var pallet in pallets)
+//   Console.WriteLine($"-- {pallet}");
+
+
+// Reverse, then combine the char array into a new string
+//ToCharArray() to reverse a string
+// using System.Net.Http.Headers;
+
+// String value = "abc123";
+// char[] valueArray = value.ToCharArray(); //converts string characters into an array
+// Array.Reverse(valueArray);
+// string result = new string(valueArray);
+// Console.WriteLine(result);
+
+
+// Join array elements into a string.
+// string value = "abc123";
+// char[] valueArray = value.ToCharArray();
+// Array.Reverse(valueArray);
+// // string result = new string(valueArray);
+// string result = String.Join(",", valueArray);
+// Console.WriteLine(result);
+
+// // Split a string into an array of strings or characters (chars).
+// string[] items = result.Split(',');
+// foreach (string item in items)
+// {
+//     Console.WriteLine(item);
+// }
+
+// --- Exercise - Complete a challenge to reverse words in a sentence ---
+//Write code to reverse each word in a message
+// string pangram = "The quick brown fox jumps over the lazy dog";
+// string revPangram = "";
+// string[] items = pangram.Split(" ");
+// foreach (var item in items)
+// {
+//   char[] revWord = item.ToCharArray();
+//   Array.Reverse(revWord);
+//   string result = new String(revWord);
+//   revPangram += result + " ";
+// }
+// Console.WriteLine(revPangram);
+
+//--- Exercise - Complete a challenge to parse a string of orders, sort the orders and tag possible errors ---
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+// String[] orderIds = orderStream.Split(",");
+// Array.Sort(orderIds);
+
+// for (int i = 0; i < orderIds.Length; i++)
+// {
+//   if (orderIds[i].Length == 4)
+//   {
+//     Console.WriteLine(orderIds[i]);
+//   }
+//   else
+//   {
+//     Console.WriteLine($"{orderIds[i]}\t- Error");  
+//   }
+// }
