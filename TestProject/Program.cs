@@ -847,3 +847,191 @@ Methods that turn a string into an array of strings or characters (Split(), ToCh
 // comparisonMessage += string.Format("{0:C}", newProfit);
 
 // Console.WriteLine(comparisonMessage);
+
+
+/* ----- Modify the Content of Strings Using Built-In String Data Type Methods in C# ----- */
+
+//--- Exercise - Use the string's IndexOf() and Substring() helper methods---
+
+// string message = "Find what is (inside the parentheses)";
+
+// //Write code to find parenthesis pairs embedded in a string
+// int openingPosition = message.IndexOf('(');
+// int closingPosition = message.IndexOf(")");
+// //Console.WriteLine(openingPosition);
+// //Console.WriteLine(closingPosition);
+
+// openingPosition += 1;
+
+// //Add code to retrieve the value between parenthesis
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+// string message = "What is the value <span>between the tags</span>?";
+
+// int openingPosition = message.IndexOf("<span>");
+// int closingPosition = message.IndexOf("</span>");
+
+// openingPosition += 6;
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+//Avoid magic values
+// string message = "What is the value <span>between the tags</span>?";
+
+// const string openSpan = "<span>";
+// const string closeSpan = "</span>";
+
+// int openingPosition = message.IndexOf(openSpan);
+// int closingPosition = message.IndexOf(closeSpan);
+
+// openingPosition += openSpan.Length;
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+//--- Exercise - Use the string's IndexOf() and LastIndexOf() helper methods ---
+// string message = "hello there!";
+
+// int first_h = message.IndexOf('h');
+// int last_h = message.LastIndexOf('h');
+
+// Console.WriteLine($"For the message: '{message}', the first 'h' is at position {first_h} and the last 'h' is at position {last_h}.");
+
+//Retrieve the last occurrence of a sub string
+// string message = "(What if) I am (only interested) in the last (set of parentheses)?";
+// int openingPosition = message.LastIndexOf('(');
+
+// openingPosition += 1;
+// int closingPosition = message.LastIndexOf(')');
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+//Retrieve all instances of substrings inside parentheses
+// string message = "(What if) there are (more than) one (set of parentheses)?";
+// while (true)
+// {
+//   int openingPosition = message.IndexOf("(");
+//   if (openingPosition == -1) break;
+
+//   openingPosition += 1;
+//   int closingPosition = message.IndexOf(")");
+//   int length = closingPosition - openingPosition;
+
+//   Console.WriteLine(message.Substring(openingPosition, length));
+
+//   // Note the overload of the Substring to return only the remaining 
+//   // unprocessed message:
+//   message = message.Substring(closingPosition + 1);
+// }
+
+//Work with different types of symbol sets with IndexOfAny()
+
+//Example1:
+// string message = "Hello, world!";
+// char[] charsToFind = { 'a', 'e', 'i' };
+
+// int index = message.IndexOfAny(charsToFind);
+
+// Console.WriteLine($"Found '{message[index]}' in '{message}' at index: {index}.");
+
+//Example2: Find opening symbol
+// string message = "Help (find) the {opening symbols}";
+// Console.WriteLine($"Searching THIS Message: {message}");
+// char[] openSymbols = { '[', '{', '(' };
+// int startPosition = 5;
+// int openingPosition = message.IndexOfAny(openSymbols);
+// Console.WriteLine($"Found WITHOUT using startPosition: {message.Substring(openingPosition)}");
+
+// openingPosition = message.IndexOfAny(openSymbols, startPosition);
+// Console.WriteLine($"Found WITH using startPosition {startPosition}:  {message.Substring(openingPosition)}");
+
+//Example3: Find closing symbol
+// string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+
+// char[] openSymbols = { '[', '{', '(' };
+// int closingPosition = 0;
+
+// while (true)
+// {
+//   int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+
+//   if (openingPosition == -1) break;
+
+//   char closingSymbole = ' ';
+//   string currentSymbole = message.Substring(openingPosition, 1);
+
+//   switch (currentSymbole)
+//   {
+//     case "[":
+//       closingSymbole = ']';
+//       break;
+//     case "{":
+//       closingSymbole = '}';
+//       break;
+//     case "(":
+//       closingSymbole = ')';
+//       break;
+//   }
+
+//   openingPosition += 1;
+//   closingPosition = message.IndexOf(closingSymbole, openingPosition);
+
+//   int length = closingPosition - openingPosition;
+
+//   Console.WriteLine(message.Substring(openingPosition, length));
+// }
+
+// --- Exercise - Use the Remove() and Replace() methods ---
+
+//Use the Remove() method
+// string data = "12345John Smith          5000  3  ";
+// string updatedData = data.Remove(5, 20);
+// Console.WriteLine(updatedData);
+
+//Use the Replace() method
+// string message = "This--is--ex-amp-le--da-ta";
+// message = message.Replace("--", " ");
+// message = message.Replace("-", "");
+// Console.WriteLine(message);
+
+//--- Exercise - Complete a challenge to extract, replace, and remove data from an input string ---
+
+using System.Security.Authentication.ExtendedProtection;
+
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+string quantity = "";
+string output = "";
+
+//Set Quantity
+const string openSpan = "<span>";
+const string closingSpan = "</span>";
+
+int startQuantity = input.IndexOf(openSpan) + openSpan.Length;
+int endQuantity = input.IndexOf(closingSpan);
+
+int quantityLenght = endQuantity - startQuantity;
+
+quantity = "Quantity: " + input.Substring(startQuantity, quantityLenght);
+
+//Remove open div
+const string opendiv = "<div>";
+int divStart = input.IndexOf(opendiv);
+output = input.Remove(divStart, opendiv.Length);
+
+//Remove close div
+const string closeingDiv = "</div>";
+int divEnd = output.IndexOf(closeingDiv);
+output = output.Remove(divEnd, closeingDiv.Length);
+
+//Replace Symbol
+const string tradeSymbol = "&trade;";
+const string regSymbol = "&reg;";
+
+output = output.Replace(tradeSymbol, regSymbol);
+
+output = "Output: " + output;
+
+
+Console.WriteLine(quantity);
+Console.WriteLine(output);
