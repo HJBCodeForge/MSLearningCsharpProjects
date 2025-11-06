@@ -996,42 +996,44 @@ Methods that turn a string into an array of strings or characters (Split(), ToCh
 
 //--- Exercise - Complete a challenge to extract, replace, and remove data from an input string ---
 
-using System.Security.Authentication.ExtendedProtection;
+// using System.Security.Authentication.ExtendedProtection;
 
-const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+// const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
-string quantity = "";
-string output = "";
+// string quantity = "";
+// string output = "";
 
-//Set Quantity
-const string openSpan = "<span>";
-const string closingSpan = "</span>";
+// //Set Quantity
+// const string openSpan = "<span>";
+// const string closingSpan = "</span>";
 
-int startQuantity = input.IndexOf(openSpan) + openSpan.Length;
-int endQuantity = input.IndexOf(closingSpan);
+// int startQuantity = input.IndexOf(openSpan) + openSpan.Length;
+// int endQuantity = input.IndexOf(closingSpan);
 
-int quantityLenght = endQuantity - startQuantity;
+// int quantityLenght = endQuantity - startQuantity;
 
-quantity = "Quantity: " + input.Substring(startQuantity, quantityLenght);
+// quantity = "Quantity: " + input.Substring(startQuantity, quantityLenght);
 
-//Remove open div
-const string opendiv = "<div>";
-int divStart = input.IndexOf(opendiv);
-output = input.Remove(divStart, opendiv.Length);
+// //Remove open div
+// const string opendiv = "<div>";
+// int divStart = input.IndexOf(opendiv);
+// output = input.Remove(divStart, opendiv.Length);
 
-//Remove close div
-const string closeingDiv = "</div>";
-int divEnd = output.IndexOf(closeingDiv);
-output = output.Remove(divEnd, closeingDiv.Length);
+// //Remove close div
+// const string closeingDiv = "</div>";
+// int divEnd = output.IndexOf(closeingDiv);
+// output = output.Remove(divEnd, closeingDiv.Length);
 
-//Replace Symbol
-const string tradeSymbol = "&trade;";
-const string regSymbol = "&reg;";
+// //Replace Symbol
+// const string tradeSymbol = "&trade;";
+// const string regSymbol = "&reg;";
 
-output = output.Replace(tradeSymbol, regSymbol);
+// output = output.Replace(tradeSymbol, regSymbol);
 
-output = "Output: " + output;
+// output = "Output: " + output;
 
 
-Console.WriteLine(quantity);
-Console.WriteLine(output);
+// Console.WriteLine(quantity);
+// Console.WriteLine(output);
+
+/* ------ Guided project - Work with variable data in C# ------ */
