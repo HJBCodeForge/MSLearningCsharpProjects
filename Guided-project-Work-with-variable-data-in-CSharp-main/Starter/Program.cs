@@ -1,4 +1,7 @@
 ﻿// #1 the ourAnimals array will store the following: 
+using System.Globalization;
+using System.Runtime.InteropServices.Marshalling;
+
 string animalSpecies = "";
 string animalID = "";
 string animalAge = "";
@@ -131,15 +134,18 @@ do
 
             while (dogCharacteristic == "")
             {
-                Console.WriteLine($"\nEnter one desired dog characteristics to search for");
+                Console.WriteLine($"\nEnter dog characteristics to search for separated by commas");
                 readResult = Console.ReadLine();
                 if (readResult != null)
                 {
                     dogCharacteristic = readResult.ToLower().Trim();
                 }
             }
-            
+
             string dogDescription = "";
+            string[] sortedCharacteristics = dogCharacteristic.Split(",");
+            Array.Sort(sortedCharacteristics);
+
             bool noMatchesDog = true;
             // #6 loop through the ourAnimals array to search for matching animals
             for (int i = 0; i < maxPets; i++)
@@ -148,14 +154,17 @@ do
                 {
                     // #7 Search combined descriptions and report results
                     dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
-
-                    if (dogDescription.Contains(dogCharacteristic))
+                    Console.WriteLine("\n");
+                    foreach (string characterist in sortedCharacteristics)
                     {
-                        Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a match!");
-                        Console.WriteLine(dogDescription);
-
-                        noMatchesDog = false;
+                        if (dogDescription.Contains(characterist))
+                        {
+                            Console.WriteLine($"Our dog {ourAnimals[i, 3]} matches your search for {characterist}");
+                            noMatchesDog = false;
+                        }
                     }
+                    Console.WriteLine($"{ourAnimals[i, 3]} ({ourAnimals[i, 0]})");
+                    Console.WriteLine(dogDescription);
                 }
             }
             if (noMatchesDog)
