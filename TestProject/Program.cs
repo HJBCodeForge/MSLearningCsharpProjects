@@ -1036,4 +1036,186 @@ Methods that turn a string into an array of strings or characters (Split(), ToCh
 // Console.WriteLine(quantity);
 // Console.WriteLine(output);
 
-/* ------ Guided project - Work with variable data in C# ------ */
+/* ------  Write your first C# method ------ */
+//--- Exercise - Create your first method ---
+// void DisplayRandomNumbers()
+// {
+//   Random random = new Random();
+//   for (int i = 0; i < 5; i++)
+//   {
+//     Console.WriteLine($"{random.Next(1, 100)}");
+//   }
+//   Console.WriteLine();
+// }
+
+// Console.WriteLine("Generating random numbers:");
+// DisplayRandomNumbers();
+
+//--- Exercise - Create reusable methods ---
+//Tracks medication times across different time zones
+
+// using System;
+
+// int[] times = { 800, 1200, 1600, 2000 };
+// int diff = 0;
+
+// Console.WriteLine("Enter current GMT");
+// int currentGMT = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Current Medicine Schedule:");
+
+// /* Format and display medicine times */
+// DisplayTimes();
+
+// Console.WriteLine("Enter new GMT");
+// int newGMT = Convert.ToInt32(Console.ReadLine());
+
+// if (Math.Abs(newGMT) > 12 || Math.Abs(currentGMT) > 12)
+// {
+//     Console.WriteLine("Invalid GMT");
+// }
+// else if (newGMT <= 0 && currentGMT <= 0 || newGMT >= 0 && currentGMT >= 0)
+// {
+//     diff = 100 * (Math.Abs(newGMT) - Math.Abs(currentGMT));
+
+//     /* Adjust the times by adding the difference, keeping the value within 24 hours */
+//     AdjustTimes();
+// }
+// else
+// {
+//     diff = 100 * (Math.Abs(newGMT) + Math.Abs(currentGMT));
+
+//     /* Adjust the times by adding the difference, keeping the value within 24 hours */
+//     AdjustTimes();
+// }
+
+// Console.WriteLine("New Medicine Schedule:");
+
+// /* Format and display medicine times */
+// DisplayTimes();
+
+
+// //Custom Methods
+// void DisplayTimes()
+// {
+//     foreach (int val in times)
+//     {
+//         string time = val.ToString();
+//         int len = time.Length;
+
+//         if (len >= 3)
+//         {
+//             time = time.Insert(len - 2, ":");
+//         }
+//         else if (len == 2)
+//         {
+//             time = time.Insert(0, "0:");
+//         }
+//         else
+//         {
+//             time = time.Insert(0, "0:0");
+//         }
+
+//         Console.Write($"{time} ");
+//     }
+// }
+
+// void AdjustTimes()
+// {
+//     /* Adjust the times by adding the difference, keeping the value within 24 hours */
+//     for (int i = 0; i < times.Length; i++)
+//     {
+//         times[i] = ((times[i] + diff)) % 2400;
+//     }
+// }
+
+/*
+if apAddress consists of 4 numbers
+and
+if each ipAddress has not leading zero's
+and
+if ipAddress number is in range 0-255
+
+then ipAddress is valid
+else ipAdress is invalid 
+*/
+// string[] ipv4Input = {"555..0.555", "255...255", "107.31.1.5", "255.0.0.255"};
+// string[] address;
+// bool validLength = false;
+// bool validRange = false;
+// bool validZeroes = false;
+
+// foreach (string ip in ipv4Input)
+// {
+//     address = ip.Split(".", StringSplitOptions.RemoveEmptyEntries);
+
+//     ValidateLength();
+//     ValidateRange();
+//     ValidateZeroes();
+
+
+//     if (validLength && validZeroes && validRange)
+//     {
+//         Console.WriteLine($"{ip} is a valid IPv4 address");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"{ip} is a invalid IPv4 address");
+//     }
+// }
+
+// void ValidateLength()
+// {
+//     validLength = address.Length == 4;
+// };
+
+// void ValidateZeroes()
+// {
+//     foreach (string number in address)
+//     {
+//         if (number.Length > 1 && number.StartsWith("0"))
+//         {
+//             validZeroes = false;
+//             return;
+//         }
+//     }
+//     validZeroes = true;
+// };
+
+// void ValidateRange()
+// {
+//     foreach (string number in address)
+//     {
+//         int value = int.Parse(number);
+//         if (value < 0 || value > 255)
+//         {
+//             validRange = false;
+//             return;
+//         }
+//     }
+//     validRange = true;
+// }
+
+// --- Exercise - Complete the challenge to create a reusable method ---
+// In game fortune talling method tellFortune(){}
+
+    Random random = new Random();
+    int luck = random.Next(100);
+
+    string[] text = { "You have much to", "Today is a day to", "Whatever work you do", "This is an ideal time to" };
+    string[] good = { "look forward to.", "try new things!", "is likely to succeed.", "accomplish your dreams!" };
+    string[] bad = { "fear.", "avoid major decisions.", "may have unexpected outcomes.", "re-evaluate your life." };
+    string[] neutral = { "appreciate.", "enjoy time with friends.", "should align with your values.", "get in tune with nature." };
+
+TellFortune();
+
+void TellFortune()
+{
+    Console.WriteLine("A fortune teller whispers the following words:");
+    string[] fortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));
+    for (int i = 0; i < 4; i++)
+    {
+        Console.Write($"{text[i]} {fortune[i]} ");
+    }
+}
+
