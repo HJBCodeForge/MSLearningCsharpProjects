@@ -1,0 +1,15 @@
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\bin\Debug\net9.0\GuidedPettingZoo.exe
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\bin\Debug\net9.0\GuidedPettingZoo.deps.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\bin\Debug\net9.0\GuidedPettingZoo.runtimeconfig.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\bin\Debug\net9.0\GuidedPettingZoo.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\bin\Debug\net9.0\GuidedPettingZoo.pdb
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.AssemblyInfoInputs.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.AssemblyInfo.cs
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.csproj.CoreCompileInputs.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.sourcelink.json
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\refint\GuidedPettingZoo.dll
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.pdb
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\GuidedPettingZoo.genruntimeconfig.cache
+C:\Users\owner\Desktop\MSLearningCsharpProjects\GuidedPettingZoo\obj\Debug\net9.0\ref\GuidedPettingZoo.dll
