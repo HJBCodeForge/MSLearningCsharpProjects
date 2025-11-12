@@ -1572,46 +1572,46 @@ else ipAdress is invalid
 
 /* --- Exercise - Complete the challenge to add methods to make the game playable --- */
 //Dice mini-game challenge
-using Microsoft.VisualBasic;
+// using Microsoft.VisualBasic;
 
-Random random = new Random();
+// Random random = new Random();
 
-Console.WriteLine("Would you like to play? (Y/N)");
+// Console.WriteLine("Would you like to play? (Y/N)");
 
-if (ShouldPlay())
-{
-  PlayGame();
-}
+// if (ShouldPlay())
+// {
+//   PlayGame();
+// }
 
-void PlayGame()
-{
-  var play = true;
+// void PlayGame()
+// {
+//   var play = true;
 
-  while (play)
-  {
-    var target = random.Next(1, 6);
-    var roll = random.Next(1, 7);
+//   while (play)
+//   {
+//     var target = random.Next(1, 6);
+//     var roll = random.Next(1, 7);
 
-    Console.WriteLine($"Roll a number greater than {target} to win!");
-    Console.WriteLine($"You rolled a {roll}");
-    Console.WriteLine(WinOrLose(target, roll));
-    Console.WriteLine("\nPlay again? (Y/N)");
-    play = ShouldPlay();
-  }
-}
+//     Console.WriteLine($"Roll a number greater than {target} to win!");
+//     Console.WriteLine($"You rolled a {roll}");
+//     Console.WriteLine(WinOrLose(target, roll));
+//     Console.WriteLine("\nPlay again? (Y/N)");
+//     play = ShouldPlay();
+//   }
+// }
 
-bool ShouldPlay()
-{
-  string? choice = Console.ReadLine();
-  return choice.ToLower().Equals("y");
-}
+// bool ShouldPlay()
+// {
+//   string? choice = Console.ReadLine();
+//   return choice.ToLower().Equals("y");
+// }
 
-string WinOrLose(int target, int roll)
-{
-  if (roll > target)
-  {
-    return "You Win!";
-  }
-    return "You Lose...";
+// string WinOrLose(int target, int roll)
+// {
+//   if (roll > target)
+//   {
+//     return "You Win!";
+//   }
+//     return "You Lose...";
 
-}
+// }
