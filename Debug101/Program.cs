@@ -114,14 +114,29 @@
 //     return sum;
 // }
 
-bool exit = false;
-var rand = new Random();
-int num1 = 5;
-int num2 = 5;
+// bool exit = false;
+// var rand = new Random();
+// int num1 = 5;
+// int num2 = 5;
 
-do
+// do
+// {
+//     num1 = rand.Next(1, 11);
+//     num2 = num1 + rand.Next(1, 51);
+
+// } while (exit == false);
+
+/*  
+This code instantiates a value and then calls the ChangeValue method
+to update the value. The code then prints the updated value to the console.
+*/
+int x = 5;
+
+x = ChangeValue(x);
+
+Console.WriteLine(x);
+
+int ChangeValue(int value) 
 {
-    num1 = rand.Next(1, 11);
-    num2 = num1 + rand.Next(1, 51);
-
-} while (exit == false);
+    return value = 10; 
+}
